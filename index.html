@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paysage SaaS Finance B2B 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .infographic {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stats-bar {
+            background: #f8f9fa;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2a5298;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .categories {
+            padding: 40px;
+        }
+        
+        .categories h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #1e3c72;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .category:nth-child(1) { border-left-color: #ff6b6b; }
+        .category:nth-child(2) { border-left-color: #4ecdc4; }
+        .category:nth-child(3) { border-left-color: #45b7d1; }
+        .category:nth-child(4) { border-left-color: #96ceb4; }
+        .category:nth-child(5) { border-left-color: #feca57; }
+        .category:nth-child(6) { border-left-color: #ff9ff3; }
+        
+        .category h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2em;
+            color: white;
+            float: left;
+        }
+        
+        .category:nth-child(1) .category-icon { background: #ff6b6b; }
+        .category:nth-child(2) .category-icon { background: #4ecdc4; }
+        .category:nth-child(3) .category-icon { background: #45b7d1; }
+        .category:nth-child(4) .category-icon { background: #96ceb4; }
+        .category:nth-child(5) .category-icon { background: #feca57; }
+        .category:nth-child(6) .category-icon { background: #ff9ff3; }
+        
+        .category-content {
+            margin-left: 70px;
+        }
+        
+        .companies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .company {
+            background: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #666;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .opportunities {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .opportunities h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .opportunity {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .opportunity h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .author {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .sources {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <div class="header">
+            <h1>Paysage SaaS Finance B2B 2025</h1>
+            <p>Cartographie complète de l'écosystème fintech pour startups early-stage</p>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-number">€127B</div>
+                <div class="stat-label">Marché SaaS Finance Global</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">43%</div>
+                <div class="stat-label">Croissance YoY B2B</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2.3M</div>
+                <div class="stat-label">Startups utilisatrices</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">156</div>
+                <div class="stat-label">Solutions identifiées</div>
+            </div>
+        </div>
+        
+        <div class="categories">
+            <h2>6 Catégories Dominantes</h2>
+            <div class="category-grid">
+                <div class="category">
+                    <div class="category-icon">📊</div>
+                    <div class="category-content">
+                        <h3>Comptabilité & Fiscalité</h3>
+                        <p>Automatisation des processus comptables et conformité fiscale pour PME et startups.</p>
+                        <div class="companies">
+                            <span class="company">Pennylane</span>
+                            <span class="company">Sage Intacct</span>
+                            <span class="company">NetSuite</span>
+                            <span class="company">QuickBooks</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-icon">💳</div>
+                    <div class="category-content">
+                        <h3>Paiement & Facturation</h3>
+                        <p>Solutions de paiement intégrées et gestion automatisée de la facturation B2B.</p>
+                        <div class="companies">
+                            <span class="company">Stripe</span>
+                            <span class="company">GoCardless</span>
+                            <span class="company">Mollie</span>
+                            <span class="company">Adyen</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-icon">🤖</div>
+                    <div class="category-content">
+                        <h3>Trading Algorithmique</h3>
+                        <p>Plateformes d'automatisation des trades et outils d'analyse quantitative.</p>
+                        <div class="companies">
+                            <span class="company">QuantConnect</span>
+                            <span class="company">MetaTrader</span>
+                            <span class="company">TradingView</span>
+                            <span class="company">Alpaca</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-icon">📈</div>
+                    <div class="category-content">
+                        <h3>Reporting & Conformité</h3>
+                        <p>Tableaux de bord financiers en temps réel et respect des réglementations.</p>
+                        <div class="companies">
+                            <span class="company">Prophix</span>
+                            <span class="company">Anaplan</span>
+                            <span class="company">Workiva</span>
+                            <span class="company">Cube</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-icon">💰</div>
+                    <div class="category-content">
+                        <h3>Gestion de Trésorerie</h3>
+                        <p>Optimisation du cash flow et prévisions financières pour startups en croissance.</p>
+                        <div class="companies">
+                            <span class="company">Carta</span>
+                            <span class="company">Fintecture</span>
+                            <span class="company">Ramp</span>
+                            <span class="company">Brex</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <div class="category-icon">🔮</div>
+                    <div class="category-content">
+                        <h3>Analyse Prédictive</h3>
+                        <p>IA et machine learning pour scoring crédit et prédiction de risques financiers.</p>
+                        <div class="companies">
+                            <span class="company">Zest AI</span>
+                            <span class="company">DataRobot</span>
+                            <span class="company">H2O.ai</span>
+                            <span class="company">Kensho</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="opportunities">
+            <h2>🎯 Opportunités Identifiées pour 2025</h2>
+            <div class="opportunity-grid">
+                <div class="opportunity">
+                    <h3>Niche Micro-SaaS</h3>
+                    <p>Solutions ultra-spécialisées pour secteurs verticaux (e-commerce, SaaS, marketplace)</p>
+                </div>
+                <div class="opportunity">
+                    <h3>API-First Banking</h3>
+                    <p>Infrastructure financière modulaire pour développeurs et startups tech</p>
+                </div>
+                <div class="opportunity">
+                    <h3>Compliance-as-a-Service</h3>
+                    <p>Automatisation réglementaire pour fintechs émergentes (GDPR, PCI DSS, SOX)</p>
+                </div>
+                <div class="opportunity">
+                    <h3>No-Code Finance</h3>
+                    <p>Outils visuels pour créer des workflows financiers sans développement</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="author">
+                <strong>Angelo Abi Hanna</strong> - Entrepreneur Data Science & Fintech B2B
+            </div>
+            <div class="sources">
+                Sources: Finextra Research, TechCrunch Fintech, Chris Skinner's Blog, Accenture Banking | Janvier 2025
+            </div>
+        </div>
+    </div>
+</body>
+</html>
